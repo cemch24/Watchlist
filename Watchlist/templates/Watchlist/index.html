@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Watchlist</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{%static 'Watchlist/index.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="{%static 'Watchlist/watchlist.js' %}"></script>
+
+</head>
+<body>
+
+  <header>
+    <h1><strong>Watchlist</strong></h1>
+    <h2><strong>Where Tracking your Shows is Easy</strong></h2>
+    <img src="{%static 'Watchlist/panda.gif' %}" alt="Panda Gif" style="width:150px;height: 200px;" class="center">
+
+  </header>
+
+<main>
+  
+  <div id="myDIV" class="header">
+    <h2><strong>Start your list of shows and movies you have completed :)</strong></h2>
+  </div>
+  
+  <ul id="myUL">
+  </ul>
+<nav>
+  <h5 class="text"><strong>Use the links below to continue through Watchlist</strong></h5>
+  <ul>
+    <li><a id = "links" href="{% url 'currentlyWatching' %}" class="program">Currently Watching</a></li>
+    <li><a id = "links" href="{% url 'recommendations' %}" class="program">Recommendations</a></li>
+    </ul>
+</nav>
+</main>
+
+
+</body>
