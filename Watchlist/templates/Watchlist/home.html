@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="{% static 'Watchlist/home.css' %}">
+</head>
+<body>
+	<header>
+		<h1>Watchlist</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><button class="login-btn" onclick="location.href='login.html'">Login</button></li>
+				<li><button class="register-btn" onclick="location.href='register.html'">Register</button></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class="intro">
+			<h2>Welcome to My Watchlist App!</h2>
+			<p>Keep track of all the TV shows and movies you want to watch, and mark them as you watch them.</p>
+		</div>
+		<div class="image-container">
+			<img src="{% static 'Watchlist/hype-anime.gif' %}" alt="TV Shows and Movies">
+		</div>
+	</main>
+</body>
+</html>

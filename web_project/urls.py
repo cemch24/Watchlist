@@ -24,7 +24,7 @@ import Watchlist.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('', include("django.contrib.auth.urls")),
+    path('', Watchlist.views.home, name="home"), 
     path('index/', include("Watchlist.urls")),
     path("second/", Watchlist.views.currentlyWatching, name="currentlyWatching"), 
     path("third/", Watchlist.views.recommendations, name="recommendations"),

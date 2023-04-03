@@ -18,4 +18,7 @@ def login(request):
     context = {}
     return render(request,"Watchlist/login.html")
 
+def home(request): 
+    context = {}
+    return render(request,"Watchlist/home.html")
 
