@@ -33,7 +33,10 @@
             <a class="nav-link" href="{% url 'currentlyWatching' %}">Currently Watching</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" href="{% url 'future' %}">Plan to Watch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
         </ul>
       </div>
@@ -45,6 +48,7 @@
   <div id="myDIV" class="header">
 
     <h3><strong>My personal list of shows and movies I think you should be watching :)</strong></h3>
+    <img src="{%static 'Watchlist/breakingbad.gif' %}" alt="breakingbad Gif" style="width:500px;height: 350px;" class="center">
     <h5><strong>If you absolutely hate some of my suggestions feel free to delete them out of your sight. </strong></h5>
     
 

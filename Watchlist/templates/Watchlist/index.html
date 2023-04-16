@@ -28,7 +28,10 @@
             <a class="nav-link" href="{% url 'recommendations' %}">Recommendations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" href="{% url 'future' %}">Plan to Watch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
         </ul>
       </div>
@@ -45,6 +48,11 @@
   <main>
     <div id="myDIV" class="header">
       <h2><strong>Start your list of shows and movies you have completed :)</strong></h2>
+      <input aria-label= "" type="text" id="myInput" placeholder="Title...">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+    
+    <ul id="myUL">
     </div>
     
     <ul id="myUL">

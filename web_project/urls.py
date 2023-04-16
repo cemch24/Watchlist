@@ -16,19 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-from Watchlist import views 
+from Watchlist import views
 import Watchlist.urls
+from Watchlist.views import SignUpView
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('', Watchlist.views.home, name="home"), 
+    path('', Watchlist.views.home, name="home"),
+    path('', include("django.contrib.auth.urls")), 
     path('index/', include("Watchlist.urls")),
     path("second/", Watchlist.views.currentlyWatching, name="currentlyWatching"), 
     path("third/", Watchlist.views.recommendations, name="recommendations"),
-    path("fourth/", Watchlist.views.login, name="login")]
+    path("login/", Watchlist.views.login, name="login"),
+    path("fifth/", Watchlist.views.future, name="future"),
+    path("signup/", SignUpView.as_view(), name="signup"),]
+
 
     
 
