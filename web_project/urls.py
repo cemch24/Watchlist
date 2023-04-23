@@ -18,7 +18,10 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 from Watchlist import views
 import Watchlist.urls
-from Watchlist.views import SignUpView
+from Watchlist.views import SignUpView, profile
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 
 
@@ -32,9 +35,12 @@ urlpatterns = [
     path("third/", Watchlist.views.recommendations, name="recommendations"),
     path("login/", Watchlist.views.login, name="login"),
     path("fifth/", Watchlist.views.future, name="future"),
-    path("signup/", SignUpView.as_view(), name="signup"),]
+    path("signup/", SignUpView.as_view(), name="signup"),
+    path('profile/', profile, name='users-profile'),
+    path('update/', Watchlist.views.update, name='update'),
+
+    ]
 
 
-    
-
-
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

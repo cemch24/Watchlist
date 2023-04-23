@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{%static 'Watchlist/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'Watchlist/navbar.css' %}">
+    <script defer src="{%static 'Watchlist/navbar.js' %}"></script>
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'index' %}">Completed</a></li>
+            <li><a href="{% url 'currentlyWatching' %}">Currently Watching</a></li>
+            <li><a href="{% url 'recommendations' %}">Recommendations</a></li>
+            <li><a href="{% url 'future' %}">Plan to Watch</a></li>
+            <li><a href="{% url 'users-profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    {% block content %}
+        <div class="row my-3 p-3">
+            <img src="{{ user.profile.image.url }}" alt="user_profile_pic">
+            <h1>Welcome {{user.username}}</h1>
+            <p>{{ user.email }}</p>
+        </div>
+    {% endblock content %}  
+
+    <h2>Profile Info</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ u_form.as_p }}
+      {{ p_form.as_p }}
+      <button type="submit">Update</button>
+    </form>
+
+</body>
+</html>
